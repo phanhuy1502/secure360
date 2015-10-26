@@ -1,0 +1,33 @@
+.page-title {
+	font-size: 2em;
+}
+
+.component-wrapper {
+	margin-top: 50px;
+}
+
+.break-word {
+	word-break: break-all;
+}
+
+.break-word > div{
+	max-height: 40px;
+	overflow: hidden;
+}
+
+.break-word > div:hover{
+	overflow: visable;
+	max-height: none;
+}
+
+.preloader-wrapper.big {
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	left: 50%;
+	margin-left: -75px;
+}
+
+i {
+	text-align: right;
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app version="3.0"
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+ 
+   <servlet>
+      <servlet-name>ApiCheck</servlet-name>
+      <servlet-class>ApiCheck</servlet-class>
+   </servlet>
+   <servlet>
+      <servlet-name>LoadingScreen</servlet-name>
+      <servlet-class>LoadingScreen</servlet-class>
+   </servlet>
+ 
+   <servlet-mapping>
+      <servlet-name>ApiCheck</servlet-name>
+      <url-pattern>/main</url-pattern>
+   </servlet-mapping>
+
+   <servlet-mapping>
+      <servlet-name>LoadingScreen</servlet-name>
+      <url-pattern>/loading</url-pattern>
+   </servlet-mapping>
+</web-app>

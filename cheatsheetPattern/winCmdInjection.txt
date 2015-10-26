@@ -1,0 +1,2 @@
+(>(\s)*/dev/null(\s)*\d>&\d(\s)*\||;|`|\||\|\||%0a|%26|>|)(\s)*(type)?(\s)*(%SYSTEMROOT%\\system32\\drivers\\etc\\hosts|%WINDIR%\\win.ini|\\boot.ini)
+(%SYSTEMROOT%\\system32\\drivers\\etc\\hosts|%WINDIR%\\win.ini|\\boot.ini)(\s)*(%00|\|\||\\000|`)?(\s)*(")?(\s)*;
