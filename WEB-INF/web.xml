@@ -12,14 +12,29 @@
       <servlet-name>LoadingScreen</servlet-name>
       <servlet-class>LoadingScreen</servlet-class>
    </servlet>
+   <servlet>
+      <servlet-name>CheckFile</servlet-name>
+      <servlet-class>CheckFile</servlet-class>
+   </servlet>
+   <servlet>
+      <servlet-name>HomeScreen</servlet-name>
+      <servlet-class>HomeScreen</servlet-class>
+   </servlet>
  
    <servlet-mapping>
       <servlet-name>ApiCheck</servlet-name>
-      <url-pattern>/main</url-pattern>
+      <url-pattern>/api</url-pattern>
    </servlet-mapping>
-
    <servlet-mapping>
       <servlet-name>LoadingScreen</servlet-name>
       <url-pattern>/loading</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>CheckFile</servlet-name>
+      <url-pattern>/checkfile</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>HomeScreen</servlet-name>
+      <url-pattern>/index</url-pattern>
    </servlet-mapping>
 </web-app>

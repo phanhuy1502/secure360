@@ -22,7 +22,7 @@
     	<nav class="top-nav">
 			<div class="container">
 				<div class="nav-wrapper">
-					<a class="page-title">API CHECK</a>
+					<a class="page-title">SECURITY 360 @ AUTODESK</a>
 				</div>
 			</div>
       	</nav>
@@ -73,7 +73,7 @@
 	    </div>
 	  <div>
 </body>
-<form action="main" method="post" style="display: none">
+<form action="api" method="post" style="display: none">
     <input type="hidden" name="file-name" value = "${fileName}">
 	<input type="hidden" name="email" value = "${email}">
 	<button type="submit" id="submit"> </button>

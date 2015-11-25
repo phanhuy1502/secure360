@@ -75,6 +75,13 @@
     	$("#error").fadeIn(1000).delay(3000).fadeOut(3000);
     </script>
 		</div>
+		
+		<form action="checkfile" method="get">
+			<span class="input-group-btn right">
+				<button class="btn btn-default" url="checkfile">Check for anomaly file!</button>
+			</span>
+		</form>
+
 		<c:if test="${not empty result}">
 		<div class="component-wrapper">
 			 <blockquote>
