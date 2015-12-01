@@ -20,7 +20,11 @@
       <servlet-name>HomeScreen</servlet-name>
       <servlet-class>HomeScreen</servlet-class>
    </servlet>
- 
+   <servlet>
+      <servlet-name>Plot</servlet-name>
+      <servlet-class>Plot</servlet-class>
+   </servlet>
+
    <servlet-mapping>
       <servlet-name>ApiCheck</servlet-name>
       <url-pattern>/api</url-pattern>
@@ -36,5 +40,9 @@
    <servlet-mapping>
       <servlet-name>HomeScreen</servlet-name>
       <url-pattern>/index</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+      <servlet-name>Plot</servlet-name>
+      <url-pattern>/plot</url-pattern>
    </servlet-mapping>
 </web-app>

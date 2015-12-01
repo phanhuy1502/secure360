@@ -19,12 +19,12 @@
     </div>
     <div class="overlay"> </div>
 <div class="container">
-	<h1>SECURE 360</h1>
+	<h1>SECURITY 360</h1>
 	<h2>@</h2>
 	<h2>AUTODESK</h2>
 	<div class = "button-container">
-    <a href="/secure360/api"> <button class="btn-lg ghost-button ghost-button"> HTTP REQUEST CHECKING </button> </a>
-    <button class="btn-lg ghost-button ghost-button"> FILE HEADER CHECKING </button>
+    <a href="/secure360/api"> <button class="btn-lg ghost-button ghost-button"> AUTODESK WEB SECURITY </button> </a>
+    <a href="/secure360/checkfile"> <button class="btn-lg ghost-button ghost-button"> AUTODESK FILE SECURITY </button> </a>
   </div>
 </div>
 </body>

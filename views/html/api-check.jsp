@@ -21,6 +21,7 @@
 
     <header>
     	<nav class="top-nav">
+    		<div class ="left" style="margin-left: 20px"> <a href="/secure360/index"> Back </div>
 			<div class="container">
 				<div class="nav-wrapper">
 					<a class="page-title">SECURITY 360 @ AUTODESK</a>
@@ -76,12 +77,6 @@
     </script>
 		</div>
 		
-		<form action="checkfile" method="get">
-			<span class="input-group-btn right">
-				<button class="btn btn-default" url="checkfile">Check for anomaly file!</button>
-			</span>
-		</form>
-
 		<c:if test="${not empty result}">
 		<div class="component-wrapper">
 			 <blockquote>

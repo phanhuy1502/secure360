@@ -16,7 +16,7 @@ public class ReportParser {
 		BufferedReader br = null;
 		ArrayList<MaliciousFile> maliciousFileList = new ArrayList<MaliciousFile>();
 		try {
-			File fileDir = new File("/home/phanhuy1502/Spark/Scala/files/report/anormally.txt");
+			File fileDir = new File("/home/phanhuy1502/Spark/Scala/files/anormally.txt");
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(fileDir), "Cp1252"));
 			String lastName = "";
 			String fileName = "";
@@ -57,7 +57,7 @@ public class ReportParser {
 		ArrayList<FileType> fileList = new ArrayList<FileType>();
 		
 		try {
-			File fileDir = new File("/home/phanhuy1502/Spark/Scala/files/report/report.txt");
+			File fileDir = new File("/home/phanhuy1502/Spark/Scala/files/report.txt");
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(fileDir), "Cp1252"));
 			String fileName = "";
 			while ((fileName = br.readLine()) != null) {
