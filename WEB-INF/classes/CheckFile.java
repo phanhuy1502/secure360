@@ -18,30 +18,19 @@ public class CheckFile extends HttpServlet {
 
       // BufferedReader is = null;
       // BufferedReader es = null;
-      //String commands = "whoami";
-      String commands = "/home/phanhuy1502/spark-1.5.1-bin-hadoop2.6/bin/spark-submit --class Secure360 --master local[4] /home/phanhuy1502/Spark/Scala/target/scala-2.10/secure-360_2.10-1.0.jar > error.txt";
 
+      // Execute command to call Spark program
+      String commands = "/home/phanhuy1502/spark-1.5.1-bin-hadoop2.6/bin/spark-submit --class Secure360 --master local[4] /home/phanhuy1502/Spark/Scala/target/scala-2.10/secure-360_2.10-1.0.jar > error.txt";
       try
       {
           Process process;
           process = Runtime.getRuntime().exec(commands);
-          
+
+          // Pass the report back for display
           ArrayList<MaliciousFile> t= ReportParser.ParseAnormallyFile();
-          for (MaliciousFile f : t) {
-            //out.println("<p>" + f.getFileName() + "</p>");
-            for (Anormally a : f.getAnormallyList()) {
-             /* out.println("<p> Anormally at: " + a.getPosition() + 
-                  "th header. Distance from nearest center: " + a.getDistance() + ". Ratio to avarage: "
-                  + a.getExceedingRatio() + "</p>");*/
-            }
-          }
           ArrayList<FileType> l = ReportParser.ParseReportFile();
-          for (FileType f: l) {
-            //out.println("<p>" + f.getName() + ": " + (f.isMalicious()? "malicious file </p>" : "normal file </p>"));
-          }
-
           request.setAttribute("malicious", t);
-
+          request.setAttribute("files", l);
       } //try
       catch(Exception e)
       {

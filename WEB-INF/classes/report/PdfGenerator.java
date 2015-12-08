@@ -105,4 +105,99 @@ public class PdfGenerator {
 		}
 		//return System.getProperty("user.dir");
 	}
+
+	public static void generateFilePdfReport() {
+        try {
+            // step 1
+             Document document = new Document(PageSize.A4);
+            // step 2
+            PdfWriter.getInstance(document, new FileOutputStream("Anomally Files Report.pdf"));
+            // step 3
+            document.open();
+            // step 4 - contains
+            
+            //title
+            Font title1Font = FontFactory.getFont("Times-Roman", 25, Font.BOLD);
+            Paragraph title1 =  new Paragraph("SECURE 360 @ Autodesk!", title1Font);
+            title1.setAlignment(Element.ALIGN_CENTER);
+            document.add(title1);
+            
+            Font title2Font = FontFactory.getFont("Times-Roman", 20, Font.BOLD);
+            Paragraph title2 = new Paragraph("Files checking result", title2Font);
+            title2.setAlignment(Element.ALIGN_CENTER);
+            title2.setSpacingAfter(20);
+            document.add(title2);
+            
+            // Create table
+            PdfPTable table = new PdfPTable(new float[] { 2 , 7 , 5 , 8 , 8 });
+            table.setWidthPercentage(100f);
+            table.getDefaultCell().setPaddingBottom(3);
+            table.getDefaultCell().setPaddingBottom(7);
+            
+            // Header
+            Font headerFont = FontFactory.getFont("Times-Roman", 15, Font.BOLD);
+            table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.getDefaultCell().setColspan(1);
+            table.getDefaultCell().setBackgroundColor(new BaseColor(0XEE, 0x6E, 0x73));
+            table.addCell(new Phrase("", headerFont));
+            table.addCell(new Phrase("File", headerFont));
+            table.addCell(new Phrase("Header No.", headerFont));
+            table.addCell(new Phrase("Distance", headerFont));
+            table.addCell(new Phrase("Ratio", headerFont));
+            table.setHeaderRows(1);
+            
+            // Table content
+            table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_LEFT);
+            Font tableFont = FontFactory.getFont("Times-Roman", 10);
+            int n = 1;
+            
+            BufferedReader br = null;
+            String line = "";
+            try {
+                File fileDir = new File("anormally.txt");
+                
+                br = new BufferedReader(
+                   new InputStreamReader(
+                              new FileInputStream(fileDir), "UTF8"));
+                while ((line = br.readLine()) != null) {
+                    table.getDefaultCell().setBackgroundColor((n%2 ==0)? BaseColor.WHITE : BaseColor.LIGHT_GRAY);
+                    table.addCell(new Phrase(n +"", tableFont));
+                    table.addCell(new Phrase(line, tableFont));
+                    table.addCell(new Phrase(br.readLine(), tableFont));
+                    table.addCell(new Phrase(br.readLine(), tableFont));
+                    table.addCell(new Phrase(br.readLine(), tableFont));
+                    n++;
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (br != null) {
+                    try {
+                        br.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }            
+            document.add(table);
+            
+            // step 5
+            document.close();
+        }
+        catch (DocumentException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        finally {
+            
+        }
+    }
+
+
+	
 }
